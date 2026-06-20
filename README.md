@@ -1,6 +1,8 @@
-### StudyNook – Library Study Room Booking
+## StudyNook – Library Study Room Booking
+### Project Theme
+StudyNook is a full‑stack web application where students and library users can list study rooms they control (e.g., private rooms in a university library), and any registered user can browse, search, filter, and book those rooms for a specific date and time slot. The platform automatically prevents double‑booking using time‑conflict detection, allows room owners to manage their listings, and gives every user a dashboard to handle their own bookings. Secure JWT authentication is stored in HTTP‑only cookies, and the whole site is responsive and recruiter‑friendly.
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
@@ -27,10 +29,5 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

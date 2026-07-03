@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
 return (
-    <nav className="flex items-center justify-between px-6 py-3 shadow container mx-auto">
+    <nav className="flex items-center justify-between px-6 py-3 shadow container mx-auto border-b">
       <div className="flex items-center gap-2">
         <div className="">
           <PiBooksFill className="" size={30}/>
@@ -23,7 +23,7 @@ return (
         <Link href="/login">Login</Link>
         <Link
           href="/register"
-          className="bg-[#2f4f45] text-white px-4 py-2 rounded-md"
+          className="bg-black text-white px-4 py-2 rounded-md"
         >
           Register
         </Link>

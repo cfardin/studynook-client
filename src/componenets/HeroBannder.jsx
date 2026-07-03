@@ -5,7 +5,7 @@ import Link from "next/link";
 const HeroBanner = () => {
     return (
         <div className="md:container mx-auto my-10">
-            <div className="bg-black rounded-4xl p-16 flex items-center justify-between gap-10">
+            <div className="bg-gray-900 rounded-4xl p-16 flex flex-col md:flex-row items-center justify-between gap-10">
                 <div className="max-w-xl">
                     <span className="inline-flex items-center gap-2 bg-white/10 text-white text-sm font-semibold px-4 py-2 rounded-full">
                         Quiet rooms, on demand

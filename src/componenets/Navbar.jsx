@@ -23,7 +23,7 @@ return (
         <Link href="/login">Login</Link>
         <Link
           href="/register"
-          className="bg-black text-white px-4 py-2 rounded-md"
+          className="bg-gray-900 text-white px-4 py-2 rounded-md"
         >
           Register
         </Link>

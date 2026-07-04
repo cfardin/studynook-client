@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Atrium Reading Nook",
+    "listedDate": "2026-06-19",
+    "description": "Window-side reading nook overlooking the library atrium. Calm, plant-filled, and well-lit.",
+    "imageUrl": "https://i.ibb.co.com/MkGYYPQh/images.jpg",
+    "pricePerHour": 6.00,
+    "floor": "1st Floor",
+    "capacity": 3,
+    "totalBookings": 21,
+    "amenities": ["Wi-Fi", "Quiet Zone", "Air Conditioning"],
+    "host": {
+      "name": "Daniel Rivera",
+      "email": "daniel@studynook.demo",
+      "profileImage": "host_placeholder_1.jpg"
+    }
+  },
+  {
+    "title": "The Oakwood Study Pod",
+    "listedDate": "2026-05-12",
+    "description": "A cozy, soundproofed wooden pod perfect for intense focus sessions or solo project work.",
+    "imageUrl": "https://i.ibb.co.com/MyQcjdRS/images.jpg",
+    "pricePerHour": 8.50,
+    "floor": "3rd Floor",
+    "capacity": 1,
+    "totalBookings": 45,
+    "amenities": ["Wi-Fi", "Power Outlets", "Soundproof"],
+    "host": {
+      "name": "Sarah Jenkins",
+      "email": "sarah@studynook.demo",
+      "profileImage": "host_placeholder_2.jpg"
+    }
+  },
+  {
+    "title": "Skyline Meeting Suite",
+    "listedDate": "2026-06-01",
+    "description": "Bright conference room with floor-to-ceiling windows and panoramic city views. Great for small teams.",
+    "imageUrl": "https://i.ibb.co.com/RG0fjTyH/Study-Rooms.jpg",
+    "pricePerHour": 15.00,
+    "floor": "Penthouse Level",
+    "capacity": 6,
+    "totalBookings": 12,
+    "amenities": ["Wi-Fi", "Whiteboard", "Projector", "Air Conditioning"],
+    "host": {
+      "name": "Marcus Chen",
+      "email": "marcus@studynook.demo",
+      "profileImage": "host_placeholder_3.jpg"
+    }
+  },
+  {
+    "title": "Basement Archives Corner",
+    "listedDate": "2026-04-20",
+    "description": "Cool, dimly lit, and ultra-quiet corner surrounded by vintage manuscripts. Zero distractions.",
+    "imageUrl": "https://i.ibb.co.com/ymhHjYpD/20230419-Group-Study-Rooms-Rose-08.jpg",
+    "pricePerHour": 4.00,
+    "floor": "Basement",
+    "capacity": 2,
+    "totalBookings": 8,
+    "amenities": ["Wi-Fi", "Quiet Zone"],
+    "host": {
+      "name": "Daniel Rivera",
+      "email": "daniel@studynook.demo",
+      "profileImage": "host_placeholder_1.jpg"
+    }
+  },
+  {
+    "title": "Greenhouse Collaborative Table",
+    "listedDate": "2026-06-15",
+    "description": "A vibrant workspace surrounded by indoor botanicals. High energy and plenty of natural sunlight.",
+    "imageUrl": "https://i.ibb.co.com/0jncHQd0/20220801-084159.jpg",
+    "pricePerHour": 10.00,
+    "floor": "2nd Floor",
+    "capacity": 4,
+    "totalBookings": 33,
+    "amenities": ["Wi-Fi", "Air Conditioning", "Coffee Access"],
+    "host": {
+      "name": "Elena Rostova",
+      "email": "elena@studynook.demo",
+      "profileImage": "host_placeholder_4.jpg"
+    }
+  },
+  {
+    "title": "The Minimalist Desk",
+    "listedDate": "2026-06-22",
+    "description": "Sleek, ergonomic setup designed for developers and designers who need a clean physical workspace.",
+    "imageUrl": "https://i.ibb.co.com/vWT1nzF/Study-Room.jpg",
+    "pricePerHour": 7.00,
+    "floor": "1st Floor",
+    "capacity": 1,
+    "totalBookings": 3,
+    "amenities": ["Wi-Fi", "Ergonomic Chair", "Monitor", "Power Outlets"],
+    "host": {
+      "name": "Marcus Chen",
+      "email": "marcus@studynook.demo",
+      "profileImage": "host_placeholder_3.jpg"
+    }
+  },
+  {
+    "title": "Loft Library Lounge",
+    "listedDate": "2026-03-10",
+    "description": "Comfortable leather armchairs with individual reading lamps. Perfect for casual reading or literature review.",
+    "imageUrl": "https://i.ibb.co.com/vvRJCchf/Arlington-Study-Room.png",
+    "pricePerHour": 5.50,
+    "floor": "Mezzanine",
+    "capacity": 2,
+    "totalBookings": 56,
+    "amenities": ["Wi-Fi", "Quiet Zone", "Plush Seating"],
+    "host": {
+      "name": "Sarah Jenkins",
+      "email": "sarah@studynook.demo",
+      "profileImage": "host_placeholder_2.jpg"
+    }
+  },
+  {
+    "title": "The Media Sandbox",
+    "listedDate": "2026-05-28",
+    "description": "Equipped booth for presentation practice, video editing, or content creation with acoustic dampening.",
+    "imageUrl": "https://i.ibb.co.com/PZnP5Y9c/images.jpg",
+    "pricePerHour": 12.00,
+    "floor": "2nd Floor",
+    "capacity": 2,
+    "totalBookings": 19,
+    "amenities": ["Wi-Fi", "Soundproof", "Audio Equipment", "Air Conditioning"],
+    "host": {
+      "name": "Amir Patel",
+      "email": "amir@studynook.demo",
+      "profileImage": "host_placeholder_5.jpg"
+    }
+  },
+  {
+    "title": "Zen Garden Alcove",
+    "listedDate": "2026-06-18",
+    "description": "An outdoor-facing alcove separated by bamboo screens. Features a small rock garden view for stress relief.",
+    "imageUrl": "https://i.ibb.co.com/99Nc6KjT/Study-Room108.jpg",
+    "pricePerHour": 9.00,
+    "floor": "1st Floor",
+    "capacity": 2,
+    "totalBookings": 14,
+    "amenities": ["Wi-Fi", "Quiet Zone"],
+    "host": {
+      "name": "Elena Rostova",
+      "email": "elena@studynook.demo",
+      "profileImage": "host_placeholder_4.jpg"
+    }
+  },
+  {
+    "title": "The Founder's Round Table",
+    "listedDate": "2026-01-15",
+    "description": "A circular oak table designed for brainstorming sessions, complete with a massive magnetic whiteboard.",
+    "imageUrl": "https://i.ibb.co.com/5XV5NMm5/study-space-2023.jpg",
+    "pricePerHour": 18.00,
+    "floor": "3rd Floor",
+    "capacity": 5,
+    "totalBookings": 88,
+    "amenities": ["Wi-Fi", "Whiteboard", "Air Conditioning", "Coffee Access"],
+    "host": {
+      "name": "Amir Patel",
+      "email": "amir@studynook.demo",
+      "profileImage": "host_placeholder_5.jpg"
+    }
+  }
+]

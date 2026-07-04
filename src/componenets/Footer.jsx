@@ -6,7 +6,7 @@ import { PiBooksFill } from "react-icons/pi";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 mt-40 px-auto py-30">
+        <footer className="bg-gray-900 px-auto py-30">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-20 mb-8 ">
                 <div>
                     <h4 className="text-white font-bold text-lg mb-3">

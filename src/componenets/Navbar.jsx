@@ -20,6 +20,7 @@ return (
       <div className="flex items-center gap-6">
         <Link href="/">Home</Link>
         <Link href="/all-rooms">Rooms</Link>
+        <Link href="/add-rooms">Add Rooms</Link>
       </div>
  
       <div className="flex items-center gap-4">

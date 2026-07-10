@@ -7,6 +7,7 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
@@ -77,11 +78,11 @@ const LoginPage = () => {
                 </Form>
                 <h3 className="text-white text-md text-center my-1">or</h3>
                 <Button
-                    type="submit"
                     className="w-full bg-white hover:bg-blue-700 text-black hover:text-white font-semibold py-2 rounded-lg mt-2"
                 >
-                    <FcGoogle /> Register with Google
+                    <FcGoogle /> Login with Google
                 </Button>
+                <p className="text-white text-center mt-5 text-sm">Don't have an account ? <Link href="/register" className="text-red-500">Register</Link></p>
             </div>
         </div>
     );

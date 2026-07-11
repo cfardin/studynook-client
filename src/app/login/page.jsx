@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {
     Button,
     FieldError,
@@ -8,25 +9,36 @@ import {
     TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
 
+    const { register, handleSubmit, watch, formState : {errors}} = useForm();
 
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = async (userData) => {
+        // console.log(data);
+
+        const { data, error } = await authClient.signIn.email({
+            email: userData.email,
+            password: userData.password,
+            rememberMe: true,
+            callbackURL: "/",
+        });
     };
+
+    
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-950">
             <div className="bg-gray-900 p-10 rounded-2xl w-96">
                 <h3 className="text-2xl font-bold text-white mb-6">Login</h3>
 
-                <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
+                <Form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
                     <TextField
                         isRequired
-                        name="email"
+                        {...register("email", {required : true})}
                         type="email"
                         validate={(value) => {
                             if (
@@ -49,7 +61,7 @@ const LoginPage = () => {
 
                     <TextField
                         isRequired
-                        name="password"
+                        {...register("password", {required : true})}
                         type="password"
                         validate={(value) => {
                             if (value.length < 8) return "Min 8 characters";
@@ -82,7 +94,7 @@ const LoginPage = () => {
                 >
                     <FcGoogle /> Login with Google
                 </Button>
-                <p className="text-white text-center mt-5 text-sm">Don't have an account ? <Link href="/register" className="text-red-500">Register</Link></p>
+                <p className="text-white text-center mt-5 text-sm">Do not have an account ? <Link href="/register" className="text-red-500">Register</Link></p>
             </div>
         </div>
     );

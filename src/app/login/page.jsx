@@ -38,7 +38,7 @@ const LoginPage = () => {
                 <Form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
                     <TextField
                         isRequired
-                        {...register("email", {required : true})}
+                       
                         type="email"
                         validate={(value) => {
                             if (
@@ -53,6 +53,7 @@ const LoginPage = () => {
                     >
                         <Label className="text-gray-300 text-sm">Email</Label>
                         <Input
+                         {...register("email", {required : true})}
                             placeholder="john@example.com"
                             className="w-full rounded-lg bg-gray-800 border border-gray-700 px-4 py-2 text-white outline-none focus:border-blue-500"
                         />
@@ -61,7 +62,7 @@ const LoginPage = () => {
 
                     <TextField
                         isRequired
-                        {...register("password", {required : true})}
+                        
                         type="password"
                         validate={(value) => {
                             if (value.length < 8) return "Min 8 characters";
@@ -75,6 +76,7 @@ const LoginPage = () => {
                             Password
                         </Label>
                         <Input
+                        {...register("password", {required : true})}
                             placeholder="Enter your password"
                             className="w-full rounded-lg bg-gray-800 border border-gray-700 px-4 py-2 text-white outline-none focus:border-blue-500"
                         />

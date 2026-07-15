@@ -1,5 +1,4 @@
 "use client";
-import { useForm } from "react-hook-form";
 
 const amenitiesList = [
     "Whiteboard",
@@ -11,9 +10,25 @@ const amenitiesList = [
 ];
 
 const AddRoomForm = () => {
-    const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const newRoom = Object.fromEntries(formData.entries());
+        newRoom.amenities = formData.getAll("amenities");
+
+        // console.log(newRoom);
+
+        const res = await fetch("http://localhost:5000/rooms", {
+            method : 'POST',
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(newRoom)
+        })
+
+        const data = await res.json();
+
         console.log(data);
     };
 
@@ -27,13 +42,13 @@ const AddRoomForm = () => {
             </p>
 
             <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="bg-white rounded-2xl shadow p-8 mt-6 flex flex-col gap-6"
+                onSubmit={onSubmit}
+                className="bg-white rounded-2xl p-8 mt-6 flex flex-col gap-6 shadow-2xl"
             >
                 <div>
                     <label className="block font-semibold text-gray-900 mb-2">Room Name</label>
                     <input
-                        {...register("name", { required: true })}
+                        name="name"
                         className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                     />
                 </div>
@@ -41,7 +56,7 @@ const AddRoomForm = () => {
                 <div>
                     <label className="block font-semibold text-gray-900 mb-2">Description</label>
                     <textarea
-                        {...register("description")}
+                        name="description"
                         rows={4}
                         className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700 resize-y"
                     />
@@ -50,7 +65,7 @@ const AddRoomForm = () => {
                 <div>
                     <label className="block font-semibold text-gray-900 mb-2">Image URL</label>
                     <input
-                        {...register("image")}
+                        name="image"
                         placeholder="https://..."
                         className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                     />
@@ -60,7 +75,7 @@ const AddRoomForm = () => {
                     <div>
                         <label className="block font-semibold text-gray-900 mb-2">Floor</label>
                         <input
-                            {...register("floor")}
+                            name="floor"
                             placeholder="e.g. 3rd Floor"
                             className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                         />
@@ -70,7 +85,7 @@ const AddRoomForm = () => {
                         <label className="block font-semibold text-gray-900 mb-2">Capacity</label>
                         <input
                             type="number"
-                            {...register("capacity")}
+                            name="capacity"
                             className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                         />
                     </div>
@@ -79,7 +94,7 @@ const AddRoomForm = () => {
                         <label className="block font-semibold text-gray-900 mb-2">Hourly Rate ($)</label>
                         <input
                             type="number"
-                            {...register("rate")}
+                            name="rate"
                             className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                         />
                     </div>
@@ -96,7 +111,7 @@ const AddRoomForm = () => {
                                 <input
                                     type="checkbox"
                                     value={amenity}
-                                    {...register("amenities")}
+                                    name="amenities"
                                     className="accent-green-800"
                                 />
                                 {amenity}

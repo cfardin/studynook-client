@@ -1,4 +1,5 @@
 import RoomCard from '@/componenets/ui/RoomCard';
+import RoomList from '@/componenets/ui/RoomList';
 import React from 'react';
 
 const AllRooms = async() => {

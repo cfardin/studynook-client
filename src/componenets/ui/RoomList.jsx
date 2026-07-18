@@ -3,6 +3,8 @@ import { useState } from "react";
 import RoomCard from "@/componenets/ui/RoomCard";
 
 const RoomList = ({ rooms }) => {
+
+    // searching system 
     const [search, setSearch] = useState("");
 
     const filteredRooms = rooms.filter((room) =>

@@ -48,7 +48,7 @@ const AddRoomForm = () => {
                 <div>
                     <label className="block font-semibold text-gray-900 mb-2">Room Name</label>
                     <input
-                        name="name"
+                        name="title"
                         className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                     />
                 </div>
@@ -65,7 +65,7 @@ const AddRoomForm = () => {
                 <div>
                     <label className="block font-semibold text-gray-900 mb-2">Image URL</label>
                     <input
-                        name="image"
+                        name="imageURL"
                         placeholder="https://..."
                         className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                     />

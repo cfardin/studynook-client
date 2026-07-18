@@ -6,15 +6,10 @@ const AllRooms = async() => {
     const rooms = await res.json();
 
     // console.log(rooms);
-    return (
+   return (
         <div className='container mx-auto'>
-            <h3>all rooms here :</h3>
-            <div className='grid grid-cols-1 md:grid-cols-3 mx-auto'>
-                {
-                    rooms.map((room, i) => <RoomCard key={i} room = {room}></RoomCard>)
-                }
-
-            </div>
+            <h3>All Study Rooms</h3>
+            <RoomList rooms={rooms} />
         </div>
     );
 };

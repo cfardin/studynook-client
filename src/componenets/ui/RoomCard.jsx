@@ -15,7 +15,7 @@ const RoomCard = ({ room }) => {
     } = room;
 
     return (
-        <div className="bg-white rounded-2xl shadow-sm border overflow-hidden max-w-sm">
+        <div className="bg-white rounded-2xl shadow-sm border overflow-hidden">
             <img src={imageUrl} alt={title} className="h-44 w-full object-cover" />
 
             <div className="p-5">

@@ -8,7 +8,7 @@ const Navbar = () => {
     const { data: session } = authClient.useSession();
 
     const user = session?.user;
-    console.log(user);
+    // console.log(user);
 
     return (
         <nav className="flex items-center justify-between px-6 py-3 shadow container mx-auto border-b">

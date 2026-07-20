@@ -21,6 +21,7 @@ const RoomList = ({ rooms }) => {
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
 
+    // toggle system
     const toggleAmenity = (amenity) => {
         setAmenities((prev) =>
             prev.includes(amenity)
@@ -46,11 +47,12 @@ const RoomList = ({ rooms }) => {
 
 
     return (
-         <div className="flex gap-8">
+         <div className="flex gap-8 mb-40">
 
 
-            {/* l sidebar */}
-            <div className="w-64 shrink-0">
+{/* don't make sidebar as a component 🙏, maybe later */}
+            {/* l sidebar */} 
+            <div className="w-64 bg-gray-900 text-white shrink-0 shadow-3xl p-4 rounded-2xl h-1/5 sticky top-10 self-start">
                 <div className="flex items-center justify-between mb-4 mt-4">
                     <h4 className="font-bold text-lg">Rooms</h4>
                     <button
@@ -60,21 +62,21 @@ const RoomList = ({ rooms }) => {
                             setMinPrice("");
                             setMaxPrice("");
                         }}
-                        className="text-sm text-gray-500 hover:bg-black rounded-sm hover:text-white py-1 px-2">
+                        className="text-sm text-gray-500 hover:bg-white rounded-sm hover:text-black py-1 px-2">
                         Reset
                     </button>
                 </div>
 
-                <label className="block text-sm text-gray-500 mb-1">Search by name</label>
+                <label className="block text-sm text-gray-100 mb-1">Search by name</label>
                 <input
                     type="text"
                     placeholder="e.g. Quiet Pod"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="border rounded-lg px-4 py-2 mb-5 w-full"
+                    className="border rounded-lg px-4 py-2 mb-5 w-full border-gray-600"
                 />
 
-                <label className="block text-sm text-gray-500 mb-2">Amenities</label>
+                <label className="block text-sm text-gray-100 mb-2">Amenities</label>
                 <div className="flex flex-col gap-2 mb-5">
                     {amenitiesList.map((amenity) => (
                         <label key={amenity} className="flex items-center gap-2 cursor-pointer">
@@ -88,21 +90,21 @@ const RoomList = ({ rooms }) => {
                     ))}
                 </div>
 
-                <label className="block text-sm text-gray-500 mb-2">Hourly rate ($)</label>
+                <label className="block text-sm text-gray-100 mb-2">Hourly rate ($)</label>
                 <div className="flex gap-2">
                     <input
                         type="number"
                         placeholder="Min"
                         value={minPrice}
                         onChange={(e) => setMinPrice(e.target.value)}
-                        className="border rounded-lg px-3 py-2 w-full"
+                        className="border rounded-lg px-3 py-2 w-full border-gray-600"
                     />
                     <input
                         type="number"
                         placeholder="Max"
                         value={maxPrice}
                         onChange={(e) => setMaxPrice(e.target.value)}
-                        className="border rounded-lg px-3 py-2 w-full"
+                        className="border rounded-lg px-3 py-2 w-full border-gray-600"
                     />
                 </div>
             </div>

@@ -29,7 +29,8 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
                 <Link href="/all-rooms">Rooms</Link>
                 <Link href="/add-rooms">Add Rooms</Link>
-                <Link href="/bookings">My Bookings</Link>
+                <Link href="/my-bookings">My Bookings</Link>
+                <Link href="/my-listings">My Listings</Link>
             </div> : 
               <div className="flex items-center gap-6">
                 <Link href="/">Home</Link>

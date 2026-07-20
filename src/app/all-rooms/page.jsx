@@ -9,7 +9,7 @@ const AllRooms = async() => {
     // console.log(rooms);
    return (
         <div className='container mx-auto'>
-            <h3>All Study Rooms</h3>
+            <h3 className='text-4xl font-bold my-10'>All Study Rooms</h3>
             <RoomList rooms={rooms} />
         </div>
     );

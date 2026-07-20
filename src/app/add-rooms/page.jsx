@@ -1,5 +1,7 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
+
 const amenitiesList = [
     "Whiteboard",
     "Projector",
@@ -10,25 +12,39 @@ const amenitiesList = [
 ];
 
 const AddRoomForm = () => {
+    const { data: session } = authClient.useSession();
+    const user = session?.user;
 
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const newRoom = Object.fromEntries(formData.entries());
-        newRoom.amenities = formData.getAll("amenities");
 
-        // console.log(newRoom);
+        const newRoom = {
+            title: formData.get("title"),
+            listedDate: new Date().toISOString().split("T")[0],
+            description: formData.get("description"),
+            imageUrl: [formData.get("imageURL")],
+            pricePerHour: parseFloat(formData.get("rate")),
+            floor: formData.get("floor"),
+            capacity: parseInt(formData.get("capacity")),
+            totalBookings: 0,
+            amenities: formData.getAll("amenities"),
+            host: {
+                name: user?.name,
+                email: user?.email,
+                profileImage: user?.image || "host_placeholder_2.jpg",
+            },
+        };
 
         const res = await fetch("http://localhost:5000/rooms", {
-            method : 'POST',
-            headers : {
-                'content-type' : 'application/json'
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body : JSON.stringify(newRoom)
-        })
+            body: JSON.stringify(newRoom)
+        });
 
         const data = await res.json();
-
         console.log(data);
     };
 
@@ -95,6 +111,7 @@ const AddRoomForm = () => {
                         <input
                             type="number"
                             name="rate"
+                            step="0.01"
                             className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 outline-none focus:border-green-700"
                         />
                     </div>

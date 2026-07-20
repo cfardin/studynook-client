@@ -7,9 +7,12 @@ const RoomList = ({ rooms }) => {
     // searching system 
     const [search, setSearch] = useState("");
 
-    const filteredRooms = rooms.filter((room) =>
-        room.title.toLowerCase().includes(search.toLowerCase())
-    );
+    // const filteredRooms = rooms.filter((room) =>
+    //     room.title.toLowerCase().includes(search.toLowerCase())
+    // );
+
+    const filteredRooms = rooms;
+
 
     return (
         <div>

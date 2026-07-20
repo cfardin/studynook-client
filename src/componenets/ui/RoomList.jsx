@@ -52,7 +52,7 @@ const RoomList = ({ rooms }) => {
 
 {/* don't make sidebar as a component 🙏, maybe later */}
             {/* l sidebar */} 
-            <div className="w-64 bg-gray-900 text-white shrink-0 shadow-3xl p-4 rounded-2xl h-1/5 sticky top-10 self-start">
+            <div className="w-64 bg-gray-900 text-white shrink-0 p-4 rounded-2xl h-1/5 sticky top-10 self-start">
                 <div className="flex items-center justify-between mb-4 mt-4">
                     <h4 className="font-bold text-lg">Rooms</h4>
                     <button

@@ -15,10 +15,10 @@ const RoomCard = ({ room }) => {
     } = room;
 
     return (
-        <div className="bg-white rounded-2xl shadow-sm border overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-sm border overflow-hidden flex flex-col h-full">
             <img src={imageUrl} alt={title} className="h-44 w-full object-cover" />
 
-            <div className="p-5">
+            <div className="p-5 flex flex-col flex-1">
                 <div className="flex items-center justify-between">
                     <h3 className="text-xl font-serif font-bold text-gray-900">{title}</h3>
                     <span className="bg-orange-100 text-orange-700 text-sm font-semibold px-3 py-1 rounded-full">
@@ -34,7 +34,7 @@ const RoomCard = ({ room }) => {
                     <span className="flex items-center gap-1"><DollarSign size={16} /> {totalBookings} bookings</span>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-4 mb-5">
                     {amenities.map((amenity) => (
                         <span key={amenity} className="bg-amber-100 text-amber-800 text-xs font-medium px-3 py-1 rounded-full">
                             {amenity}
@@ -44,7 +44,7 @@ const RoomCard = ({ room }) => {
 
                 <Link
                     href={`/all-rooms/${_id}`}
-                    className="block text-center border border-gray-300 rounded-lg mt-5 py-2 font-semibold hover:bg-gray-50"
+                    className="mt-auto  bg-gray-900 text-white block text-center border border-gray-300 rounded-lg py-2 font-semibold hover:bg-gray-700"
                 >
                     View Details
                 </Link>

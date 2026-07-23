@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Layers, Users, DollarSign, CheckCircle2, Calendar } from 'lucide-react';
+import { Button } from '@heroui/react';
+import DeleteBtn from '@/componenets/ui/DeleteBtn';
 
 const BookInfo = async ({ params }) => {
 
@@ -30,9 +32,16 @@ const BookInfo = async ({ params }) => {
 
     return (
         <div className="w-4xl mx-auto py-10">
-            <Link href="/all-rooms" className="flex items-center gap-2 text-gray-700 hover:text-black mb-6 w-fit">
-                <ArrowLeft size={18} /> Back
-            </Link>
+            <div className='flex justify-between items-center mb-6'>
+                <Link href="/all-rooms" className="flex items-center gap-2 text-gray-700 hover:text-black mb-6 w-fit">
+                    <ArrowLeft size={18} /> Back
+                </Link>
+                <div>
+
+                    <DeleteBtn room = {room}></DeleteBtn>
+                </div>
+            </div>
+            
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* left */}

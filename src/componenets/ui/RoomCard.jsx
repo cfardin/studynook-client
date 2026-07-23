@@ -43,7 +43,7 @@ const RoomCard = ({ room }) => {
                 </div>
 
                 <Link
-                    href={`/rooms/${_id}`}
+                    href={`/all-rooms/${_id}`}
                     className="block text-center border border-gray-300 rounded-lg mt-5 py-2 font-semibold hover:bg-gray-50"
                 >
                     View Details

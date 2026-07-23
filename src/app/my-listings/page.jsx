@@ -13,7 +13,7 @@ const MyListingPage = () => {
     useEffect(() => {
         if (!session?.user?.email) return;
 
-        fetch(`http://localhost:5000/rooms/${session?.user?.email}`)
+        fetch(`http://localhost:5000/rooms/host/${session?.user?.email}`)
             .then((res) => res.json())
             .then((data) => setRooms(data))
     }, [session]);

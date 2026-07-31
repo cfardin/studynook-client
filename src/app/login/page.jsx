@@ -26,6 +26,13 @@ const LoginPage = () => {
             rememberMe: true,
             callbackURL: "/",
         });
+
+        if(error){
+            console.log("error :", error);
+        }
+        if(data){
+            console.log("data :", data)
+        }
     };
 
     

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, Layers, Users, DollarSign, CheckCircle2, Calendar } from 'lucide-react';
 import { Button } from '@heroui/react';
 import DeleteBtn from '@/componenets/ui/DeleteBtn';
+import BookingModal from '@/componenets/ui/BookingModal';
 
 const BookInfo = async ({ params }) => {
 
@@ -90,9 +91,10 @@ const BookInfo = async ({ params }) => {
                             <span className="flex items-center gap-2"><DollarSign size={16} /> {totalBookings} total bookings</span>
                         </div>
 
-                        <button className="w-full flex items-center justify-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold py-3 rounded-lg mt-6">
+                        {/* <button className="w-full flex items-center justify-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold py-3 rounded-lg mt-6">
                             <Calendar size={18} /> Book Now
-                        </button>
+                        </button> */}
+                        <BookingModal room = {room} title={title} pricePerHour={pricePerHour}></BookingModal>
                     </div>
 
                     <div className="bg-white rounded-2xl shadow-sm border p-6">

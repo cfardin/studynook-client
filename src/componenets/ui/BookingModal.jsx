@@ -22,7 +22,7 @@ const BookingModal = ({ room, title, pricePerHour }) => {
         const bookingData = {
             roomId: room._id,
             roomTitle: room.title,
-            imageUrl,
+            imageUrl: room.imageUrl,
             date,
             start,
             end,
@@ -58,9 +58,9 @@ const BookingModal = ({ room, title, pricePerHour }) => {
                 <Modal.Container>
                     <Modal.Dialog className="sm:max-w-md">
                         <Modal.CloseTrigger>
-                            <button className="absolute top-5 right-5 text-gray-400 hover:text-gray-700">
+                            {/* <button className="absolute top-5 right-5 text-gray-400 hover:text-gray-700"> */}
                                 <X size={18} />
-                            </button>
+                            {/* </button> */}
                         </Modal.CloseTrigger>
 
                         <div className="p-6">

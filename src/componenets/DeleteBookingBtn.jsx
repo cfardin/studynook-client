@@ -3,13 +3,13 @@ import {AlertDialog, Button} from "@heroui/react";
 import { useRouter } from "next/navigation";
 
 
-const DeleteBtn = ({room}) => {
+const DeleteBookingBtn = ({booking}) => {
 
-    const {_id} = room;
+    const {_id} = booking;
     const router = useRouter();
 
     const handleDelete = async() =>{
-        const res = await fetch(`http://localhost:5000/rooms/${_id}`,{
+        const res = await fetch(`http://localhost:5000/bookings/${_id}`,{
             method : "DELETE",
             headers : {
                 'content-type' : 'application/json',
@@ -55,4 +55,4 @@ const DeleteBtn = ({room}) => {
   );
 };
 
-export default DeleteBtn;
+export default DeleteBookingBtn;

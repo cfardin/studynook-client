@@ -30,6 +30,9 @@ const BookInfo = async ({ params }) => {
         year: "numeric",
     });
 
+
+    
+
     return (
         <div className="w-full max-w-7xl mx-auto py-10 px-4">
             <div className='flex justify-between items-center mb-6'>

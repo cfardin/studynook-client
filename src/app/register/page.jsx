@@ -1,4 +1,10 @@
 "use client";
+
+import dns from "node:dns"
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
+
+
 import { authClient } from "@/lib/auth-client";
 import {
     Button,
@@ -39,6 +45,12 @@ const LoginPage = () => {
         alert("Sign Up done");
        }
     };
+
+    const handleGoogleSignIn = async() =>{
+       await authClient.signIn.social({
+        provider : "google"
+       })
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-950">
@@ -128,7 +140,7 @@ const LoginPage = () => {
                 </Form>
 
                 <h3 className="text-white text-md text-center my-1">or</h3>
-                <Button className="w-full bg-white hover:bg-blue-700 text-black hover:text-white font-semibold py-2 rounded-lg mt-2">
+                <Button onClick={handleGoogleSignIn} className="w-full bg-white hover:bg-blue-700 text-black hover:text-white font-semibold py-2 rounded-lg mt-2">
                     <FcGoogle /> Register with Google
                 </Button>
 

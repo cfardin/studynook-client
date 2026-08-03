@@ -1,4 +1,5 @@
 "use client";
+
 import { authClient } from "@/lib/auth-client";
 import {
     Button,
@@ -34,6 +35,12 @@ const LoginPage = () => {
             console.log("data :", data)
         }
     };
+
+    const handleGoogleSignIn = async() =>{
+        const data = await authClient.signIn.social({
+            provider : "google",
+        })
+    }
 
     
 
@@ -99,6 +106,7 @@ const LoginPage = () => {
                 </Form>
                 <h3 className="text-white text-md text-center my-1">or</h3>
                 <Button
+                    onClick={handleGoogleSignIn}
                     className="w-full bg-white hover:bg-blue-700 text-black hover:text-white font-semibold py-2 rounded-lg mt-2"
                 >
                     <FcGoogle /> Login with Google

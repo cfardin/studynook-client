@@ -17,7 +17,7 @@ const DeleteBtn = ({room}) => {
         });
 
         if(res.ok){
-            const data = res.json();
+            const data = await res.json();
             router.push('/all-rooms');
             alert("Destination updated successfully!");
         }

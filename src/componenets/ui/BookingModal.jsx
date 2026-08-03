@@ -22,6 +22,7 @@ const BookingModal = ({ room, title, pricePerHour }) => {
         const bookingData = {
             roomId: room._id,
             roomTitle: room.title,
+            imageUrl,
             date,
             start,
             end,

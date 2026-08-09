@@ -1,6 +1,7 @@
 "use client";
 import {AlertDialog, Button} from "@heroui/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 
 const DeleteBookingBtn = ({booking}) => {
@@ -19,13 +20,13 @@ const DeleteBookingBtn = ({booking}) => {
         if(res.ok){
             const data = await res.json();
             router.push('/all-rooms');
-            alert("Destination updated successfully!");
+            toast.success("Booking Canceled");
         }
     }
 
  return (
     <AlertDialog>
-      <Button variant="danger">Delete</Button>
+      <Button variant="danger">Cancel Booking</Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-100">

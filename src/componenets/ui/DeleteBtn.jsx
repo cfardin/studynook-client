@@ -1,6 +1,7 @@
 "use client";
 import {AlertDialog, Button} from "@heroui/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 
 const DeleteBtn = ({room}) => {
@@ -19,7 +20,8 @@ const DeleteBtn = ({room}) => {
         if(res.ok){
             const data = await res.json();
             router.push('/all-rooms');
-            alert("Destination updated successfully!");
+            // alert("Destination updated successfully!");
+            toast.error('Room Deleted');
         }
     }
 

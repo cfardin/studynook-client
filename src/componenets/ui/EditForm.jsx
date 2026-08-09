@@ -1,9 +1,10 @@
-"use client";
 
-import { authClient } from "@/lib/auth-client";
-import toast from "react-hot-toast";
+import {Button, Modal} from "@heroui/react";
 
-const amenitiesList = [
+
+const EditForm = ({room}) => {
+
+    const amenitiesList = [
     "Whiteboard",
     "Projector",
     "Wi-Fi",
@@ -12,57 +13,13 @@ const amenitiesList = [
     "Air Conditioning",
 ];
 
-const AddRoomForm = () => {
-    const { data: session } = authClient.useSession();
-    const user = session?.user;
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-
-        const newRoom = {
-            title: formData.get("title"),
-            listedDate: new Date().toISOString().split("T")[0],
-            description: formData.get("description"),
-            imageUrl: [formData.get("imageURL")],
-            pricePerHour: parseFloat(formData.get("rate")),
-            floor: formData.get("floor"),
-            capacity: parseInt(formData.get("capacity")),
-            totalBookings: 0,
-            amenities: formData.getAll("amenities"),
-            host: {
-                name: user?.name,
-                email: user?.email,
-                profileImage: user?.image || "host_placeholder_2.jpg",
-            },
-        };
-
-        const res = await fetch("http://localhost:5000/rooms", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newRoom)
-        });
-
-        const data = await res.json();
-        // console.log(data);
-        if(data.ok){
-            toast.success("Successfully Added Room");
-        }
-    };
-
-    return (
-        <div className="max-w-3xl mx-auto my-10 px-4">
-            <h1 className="text-4xl font-serif font-bold text-gray-900">
-                Add a New Room
-            </h1>
-            <p className="text-gray-500 mt-2">
-                Share your study room with others. You can edit or remove it any time.
-            </p>
-
-            <form
-                onSubmit={onSubmit}
+ return (
+    <Modal>
+      <Button variant="secondary">Edit</Button>
+      <Modal.Backdrop>
+                   <form
+                
                 className="bg-white rounded-2xl p-8 mt-6 flex flex-col gap-6 shadow-2xl"
             >
                 <div>
@@ -148,8 +105,9 @@ const AddRoomForm = () => {
                     Publish Room
                 </button>
             </form>
-        </div>
-    );
+      </Modal.Backdrop>
+    </Modal>
+  );
 };
 
-export default AddRoomForm;
+export default EditForm;

@@ -1,7 +1,5 @@
 "use client";
 
-import dns from "node:dns"
-dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 
 
@@ -18,6 +16,7 @@ import {
 import { error } from "better-auth/api";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import toast from "react-hot-toast";
 
 
 
@@ -39,10 +38,12 @@ const LoginPage = () => {
         });
 
        if(error){
-        alert(error.message);
+        // alert(error.message);
+        toast.error('Login Failed !', error.message);
        }
        if(data){
-        alert("Sign Up done");
+        // alert("Sign Up done");
+        toast.success("Sign Up done");
        }
     };
 

@@ -4,6 +4,7 @@ import { ArrowLeft, Layers, Users, DollarSign, CheckCircle2, Calendar } from 'lu
 import { Button } from '@heroui/react';
 import DeleteBtn from '@/componenets/ui/DeleteBtn';
 import BookingModal from '@/componenets/ui/BookingModal';
+import EditForm from '@/componenets/ui/EditForm';
 
 const BookInfo = async ({ params }) => {
 
@@ -40,9 +41,10 @@ const BookInfo = async ({ params }) => {
                 <Link href="/all-rooms" className="flex items-center gap-2 text-gray-700 hover:text-black mb-6 w-fit">
                     <ArrowLeft size={18} /> Back
                 </Link>
-                <div>
-
+                <div className='flex gap-4'>
+                    <EditForm room = {room}></EditForm>
                     <DeleteBtn room = {room}></DeleteBtn>
+                    
                 </div>
             </div>
             

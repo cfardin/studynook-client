@@ -1,5 +1,6 @@
 "use client";
 
+
 import { authClient } from "@/lib/auth-client";
 import {
     Button,
@@ -11,6 +12,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
@@ -29,10 +31,12 @@ const LoginPage = () => {
         });
 
         if(error){
-            console.log("error :", error);
+            // console.log("error :", error);
+            toast.error("Login Failed !", error);
         }
         if(data){
-            console.log("data :", data)
+            // console.log("data :", data)
+            toast.success("Login Successful");
         }
     };
 

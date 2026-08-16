@@ -12,9 +12,21 @@ const MyListingPage = () => {
      
     useEffect(() => {
         if (!session?.user?.email) return;
-        fetch(`http://localhost:5000/rooms/host/${session?.user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setRooms(data))
+        const fetchListing = async() =>{
+            const tokenRes = await fetch("/api/auth/token");
+            const { token } = await tokenRes.json();
+
+             const res = await fetch(`http://localhost:5000/rooms/host/${session.user.email}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const data = await res.json();
+            setRooms(data);
+        };
+
+        fetchListing();
     }, [session]);
 
 

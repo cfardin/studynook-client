@@ -1,9 +1,19 @@
 import RoomCard from '@/componenets/ui/RoomCard';
 import RoomList from '@/componenets/ui/RoomList';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import React from 'react';
 
 const AllRooms = async() => {
-    const res = await fetch(`${process.env.SERVER_URL}/rooms`);
+     // to get token 
+    const {token} = await auth.api.getToken({
+        headers : await headers()
+    })
+    const res = await fetch(`${process.env.SERVER_URL}/rooms`,  {
+            headers : {
+                authorization : `Bearer ${token}`
+            }
+        });
     const rooms = await res.json();
 
     // console.log(rooms);

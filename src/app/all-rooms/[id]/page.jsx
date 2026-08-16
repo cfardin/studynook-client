@@ -5,12 +5,22 @@ import { Button } from '@heroui/react';
 import DeleteBtn from '@/componenets/ui/DeleteBtn';
 import BookingModal from '@/componenets/ui/BookingModal';
 import EditForm from '@/componenets/ui/EditForm';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 
 const BookInfo = async ({ params }) => {
 
     const { id } = await params;
 
-    const res = await fetch(`http://localhost:5000/rooms/${id}`);
+    // to get token 
+    const {token} = await auth.api.getToken({
+        headers : await headers()
+    })
+    const res = await fetch(`http://localhost:5000/rooms/${id}`, {
+        headers : {
+            authorization : `Bearer ${token}`
+        }
+    });
     const room = await res.json();
 
     const {

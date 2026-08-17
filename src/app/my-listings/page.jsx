@@ -16,7 +16,7 @@ const MyListingPage = () => {
             const tokenRes = await fetch("/api/auth/token");
             const { token } = await tokenRes.json();
 
-             const res = await fetch(`http://localhost:5000/rooms/host/${session.user.email}`, {
+             const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/host/${session.user.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

@@ -6,14 +6,10 @@ import React from 'react';
 
 const AllRooms = async() => {
      // to get token 
-    const {token} = await auth.api.getToken({
-        headers : await headers()
-    })
-    const res = await fetch(`${process.env.SERVER_URL}/rooms`,  {
-            headers : {
-                authorization : `Bearer ${token}`
-            }
-        });
+    // const {token} = await auth.api.getToken({
+    //     headers : await headers()
+    // })
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms`);
     const rooms = await res.json();
 
     // console.log(rooms);

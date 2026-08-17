@@ -12,11 +12,11 @@ const ProfilePage = () => {
     useEffect(() => {
         if (!user?.email) return;
 
-        fetch(`http://localhost:5000/bookings/user/${user.email}`)
+        fetch(`${process.env.SERVER_URL}/bookings/user/${user.email}`)
             .then((res) => res.json())
             .then((data) => setBookedCount(data.length));
 
-        fetch(`http://localhost:5000/rooms/host/${user.email}`)
+        fetch(`${process.env.SERVER_URL}/rooms/host/${user.email}`)
             .then((res) => res.json())
             .then((data) => setListedCount(data.length));
     }, [user]);

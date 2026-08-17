@@ -16,7 +16,7 @@ const BookInfo = async ({ params }) => {
     const {token} = await auth.api.getToken({
         headers : await headers()
     })
-    const res = await fetch(`http://localhost:5000/rooms/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/${id}`, {
         headers : {
             authorization : `Bearer ${token}`
         }

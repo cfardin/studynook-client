@@ -12,13 +12,24 @@ const ProfilePage = () => {
     useEffect(() => {
         if (!user?.email) return;
 
-        fetch(`${process.env.SERVER_URL}/bookings/user/${user.email}`)
-            .then((res) => res.json())
-            .then((data) => setBookedCount(data.length));
+        const fetchCounts = async () => {
+            const tokenRes = await fetch("/api/auth/token");
+            const { token } = await tokenRes.json();
 
-        fetch(`${process.env.SERVER_URL}/rooms/host/${user.email}`)
-            .then((res) => res.json())
-            .then((data) => setListedCount(data.length));
+            const headers = {
+                Authorization: `Bearer ${token}`,
+            };
+
+            const bookingsRes = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/user/${user.email}`, { headers });
+            const bookingsData = await bookingsRes.json();
+            setBookedCount(Array.isArray(bookingsData) ? bookingsData.length : 0);
+
+            const roomsRes = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/rooms/host/${user.email}`, { headers });
+            const roomsData = await roomsRes.json();
+            setListedCount(Array.isArray(roomsData) ? roomsData.length : 0);
+        };
+
+        fetchCounts();
     }, [user]);
 
     return (

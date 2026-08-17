@@ -45,7 +45,7 @@ const Navbar = () => {
 
                 {/* right side */}
                 <div className="flex items-center gap-4">
-                    <Moon size={20} className="cursor-pointer" />
+                    {/* <Moon size={20} className="cursor-pointer" /> */}
 
                     {/* desktop auth */}
                     <div className="hidden md:flex items-center gap-4">
